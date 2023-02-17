@@ -1,0 +1,28 @@
+->Redux toolkit recommends that we should group together the reducer logic
+    and actions for a single features in a single file.
+->That file should contain slice as suffix,
+->now to use slice import createslice method from redux toolkit.
+SLICE::
+->slice is a function which takes an object which contains 3 properties
+1)name :
+2)initial_state :
+3)reducers :
+->within the reducers we specify individual state transmissions
+->within reducers we specify property which is a function and takes state and action 
+  as an arguments.
+->We can directly mutate the state in redux-toolkit because of immer library.
+
+**createsilce will autometically generates action creators with the same
+  name as the reducer functions we have written.
+**apart from this it also return main reducer function which we have written.
+
+->after creating a slice,
+*use default export to export reducers.
+*and use name export for actions.
+
+STORE::
+->store which stores the global state or data of our app.
+->to create a rtk store we need to import configurestore from redux-toolkit.
+->then asign to a variable and invoke the function configurestore which takes object
+  as an argument,inside it we define a key 'reducer' which specify all the reducer slices 
+  that belong to features. 
