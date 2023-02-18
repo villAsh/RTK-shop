@@ -1,4 +1,5 @@
-const createSlice = require('@reduxjs/toolkit').createSlice;
+// const createSlice = require('@reduxjs/toolkit').createSlice;
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     numOfIceCream : 20
@@ -17,5 +18,7 @@ const iceCreamSlice = createSlice({
     }
 })
 
-module.exports = iceCreamSlice.reducer;
-module.exports.iceCreamActions = iceCreamSlice.actions;
+// module.exports = iceCreamSlice.reducer;
+export default [iceCreamSlice.reducer];
+export const { order , restocked } = iceCreamActions.actions;
+// module.exports.iceCreamActions = iceCreamSlice.actions;

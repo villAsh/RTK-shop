@@ -1,6 +1,9 @@
-const store = require('./App/store')
-const cakeActions = require('./features/cake/cakeSlice').cakeActions
-const iceCreamActions = require('./features/iceCream/iceCreamSlice').iceCreamActions
+// const store = require('./App/store')
+// const cakeActions = require('./features/cake/cakeSlice').cakeActions
+// const iceCreamActions = require('./features/iceCream/iceCreamSlice').iceCreamActions
+import { store as store } from './App/store';
+import { cakeActions } from './features/cake/cakeSlice.';
+import { iceCreamActions } from './features/iceCream/iceCreamSlice';
 console.log("initial state : ",store.getState())
 
 const unsubscribe = store.subscribe(() => {});
