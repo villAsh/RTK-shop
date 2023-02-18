@@ -2,11 +2,15 @@
 import './App.css';
 import Home from './Pages/Home';
 import Cart from './Pages/Cart';
-import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 import Navbar from './Components/Navbar';
+import store from './App/store';
+
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
+
 function App() {
   return (
-    <div className="App">
+    <Provider store={store}>
       <Router>
         <Navbar />
         <Routes>
@@ -14,7 +18,7 @@ function App() {
           <Route path='cart' element={<Cart />} />
         </Routes>
       </Router>
-    </div>
+    </Provider>
   );
 }
 
