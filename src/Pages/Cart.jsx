@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { remove } from '../Features/CartSlice';
+import { remove,increaseQty,decreaseQty } from '../Features/CartSlice';
 export default function Cart() {
 	const cartList = useSelector((state) => state.cart);
 	const dispatch = useDispatch();
@@ -16,7 +16,12 @@ export default function Cart() {
 					<div className="bg-white flex justify-between items-center mt-5 p-5" key={product.id}>
 						<img src={product.image} alt="product" className="h-28" />
 						<h4 className="font-bold">{product.title}</h4>
-						<h5 className="font-bold">{product.price}</h5>
+						<h5 className="font-bold">{ product.price * product.qty}</h5>
+						<div className='flex space-x-3'>
+							<button className='font-bold text-4xl' onClick={() => dispatch(increaseQty(product.id))}>+</button>
+						<h5  className="font-bold">{product.qty}</h5>
+						<button className='font-bold text-4xl' onClick={() => dispatch(decreaseQty(product.id))}>-</button>
+						</div>
 						<button
 							onClick={() => handleRemove(product.id)}
 							className="bg-blue-400 px-8 py-2 rounded-full
