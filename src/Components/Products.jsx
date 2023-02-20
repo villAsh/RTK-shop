@@ -35,6 +35,10 @@ export default function Products() {
 					<Shimmer />
 					<Shimmer />
 					<Shimmer />
+					<Shimmer />
+					<Shimmer />
+					<Shimmer />
+					<Shimmer />
 				</div>
 			)}
 		</div>
