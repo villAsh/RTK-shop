@@ -5,7 +5,7 @@ export default function Shimmer(){
     return(
     <div >
         <div>
-             <Skeleton width={300} height={300} />
+             <Skeleton width={250} height={300} />
         </div>
         <div>
             <h4><Skeleton width={250} /></h4>
