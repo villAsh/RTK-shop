@@ -25,8 +25,8 @@ const CartSlice = createSlice({
         },
         decreaseQty(state,action){
             const product = state.find((item) => item.id = action.payload);
-            if(product.qty < 1){
-                product.qty = 1; 
+            if(product.qty === 1){
+                return state = state.filter((product) => product.id !== action.payload);
             }else{
                 product.qty--;
             }

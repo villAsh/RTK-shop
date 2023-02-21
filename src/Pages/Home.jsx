@@ -8,7 +8,6 @@ export default function Home() {
 			</div>
 			<div>
 				<h5 className="text-2xl text-black font-semibold">Products</h5>
-
 				<Products />
 			</div>
 		</div>

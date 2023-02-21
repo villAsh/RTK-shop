@@ -49,6 +49,7 @@ export default function Cart() {
 								<td>
 									<div className="flex items-center justify-center space-x-3">
 										<button
+										
 											className="font-bold text-2xl pb-1 bg-blue-400 hover:bg-blue-500 px-7 py-[1px] text-center rounded-full"
 											onClick={() => dispatch(increaseQty(product.id))}
 										>
@@ -56,6 +57,7 @@ export default function Cart() {
 										</button>
 										<h5 className="font-bold my-auto">{product.qty}</h5>
 										<button
+									
 											className="font-bold text-2xl pb-1 bg-blue-400  hover:bg-blue-500 px-8 py-[1px] text-center rounded-full"
 											onClick={() => dispatch(decreaseQty(product.id))}
 										>
