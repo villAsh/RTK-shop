@@ -3,8 +3,7 @@
 <p>The user can add product to their cart and in cart page the user can increase product quantity,decrease product quantity,<br>
    and remove the product from cart.</p>
 <p>The user can place order, upon placing the order it will make the cart empty with an alert message.</p>
-
-
+<p>Live Web App Demo : </p></p><a href="https://vilas-rtk-shop.netlify.app/">Demo</a>
 
 # Getting Started with Create React App
 
