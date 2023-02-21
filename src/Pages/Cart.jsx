@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { remove, increaseQty, decreaseQty } from '../Features/CartSlice';
+import { remove, increaseQty, decreaseQty,placeOrder } from '../Features/CartSlice';
 export default function Cart() {
 	const cartList = useSelector((state) => state.cart);
 	const dispatch = useDispatch();
@@ -9,15 +9,19 @@ export default function Cart() {
 	};
 
 	const getTotal = () =>{
-		let qty = 0;
 		let total = 0;
-		cartList.map((product) => {
-			qty = product.qty
-			total = product.price * qty;
-			console.log(total)
+		cartList.forEach((product) => {
+			total += product.price * product.qty;
+			console.log("total..",total)
 		})
-		return {total};
+		return total.toFixed(2);
 	}
+
+	const handleCart = (cartlist) => {
+		alert("Your order has been palced....Happy Shopping");
+		dispatch(placeOrder(cartlist))
+	}
+
 	return (
 		<div className="px-5 py-5 flex flex-col bg-gray-100 min-h-[90vh]">
 			<h1 className="text-2xl font-bold">Cart</h1>
@@ -40,7 +44,7 @@ export default function Cart() {
 									<h4 className="font-bold">{product.title}</h4>
 								</td>
 								<td>
-									<h5 className="font-bold"> &#36;{product.price * product.qty} </h5>
+									<h5 className="font-bold"> &#36;{product.price} </h5>
 								</td>
 								<td>
 									<div className="flex items-center justify-center space-x-3">
@@ -82,9 +86,13 @@ export default function Cart() {
 			</table>
 			{cartList.length >= 1 ? (
 					<div className="float-right ml-auto md:mr-10 flex items-center flex-col">
-						<h5 className='font-bold text-2xl'>Total : &#36;<span>{getTotal().total}</span></h5>
-					<button className="bg-blue-400 hover:bg-blue-500 px-8 py-2 rounded-full
-                            mt-4 font-bold">Place Order</button>
+						<h5 className='font-bold text-2xl'>Total : &#36;<span>{getTotal()}</span></h5>
+					<button onClick={(cartList) => handleCart(cartList)}
+						className="bg-blue-400 hover:bg-blue-500 px-8 py-2 rounded-full
+                        mt-4 font-bold"
+					>		
+						Place Order
+					</button>
 				</div>
 			) : ''}
 		
