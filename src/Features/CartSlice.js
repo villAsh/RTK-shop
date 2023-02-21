@@ -32,7 +32,7 @@ const CartSlice = createSlice({
             }
         },
         placeOrder(state){
-            return state.cart = []
+            return state =  []
         }
     }
 });
