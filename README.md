@@ -1,3 +1,11 @@
+<h1>About RTK shop</h1>
+<p>RTK shop is a shopping cart project which i have created while learning redux and redux toolkit.</p>
+<p>The user can add product to their cart and in cart page the user can increase product quantity,decrease product quantity,<br>
+   and remove the product from cart.</p>
+<p>The user can place order, upon placing the order it will make the cart empty with an alert message.</p>
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
